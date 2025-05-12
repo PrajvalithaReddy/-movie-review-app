@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Review Submitted</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-top: 20px;
+    }
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    .success-message {
+      margin-top: 20px;
+      color: green;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .submitted-review {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Review Submission Success</h1>
+
+  <div class="container">
+    <div class="success-message">Review submitted successfully!</div>
+    <div class="submitted-review">
+      <strong>Your Review:</strong>
+      <p id="submitted-review-text"></p>
+    </div>
+  </div>
+
+  <script>
+    // Display the submitted review from localStorage
+    document.getElementById("submitted-review-text").textContent = localStorage.getItem("review");
+  </script>
+
+</body>
+</html>

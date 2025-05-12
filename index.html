@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Review - Main Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-top: 20px;
+    }
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .movie-card {
+      display: flex;
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .poster {
+      width: 200px;
+      height: 300px;
+      margin-right: 20px;
+    }
+    .movie-details {
+      flex-grow: 1;
+    }
+    .movie-title {
+      font-size: 24px;
+      color: #333;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    .review-form {
+      margin-top: 20px;
+    }
+    textarea {
+      width: 100%;
+      height: 100px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .submit-btn {
+      display: block;
+      width: 100%;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    .submit-btn:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Movie Review</h1>
+
+  <!-- Movie Info -->
+  <div class="container">
+    <div class="movie-card">
+      <!-- Movie Poster -->
+      <img src="https://moviegalleri.net/wp-content/uploads/2023/05/NTR30-Devara-Movie-First-Look-Poster-HD.jpg" alt="Movie Poster" class="poster">
+      
+      <div class="movie-details">
+        <!-- Clickable Movie Title -->
+        <div class="movie-title" onclick="goToDetails()">DEVARA PART-1</div>
+        <div class="details">Director: Koratala siva | Duration: 178 mins</div>
+        <div class="rating">Rating: ★★★★★</div>
+      </div>
+    </div>
+
+    <!-- Review Form -->
+    <div class="review-form">
+      <h2>Write a Review</h2>
+      <textarea id="review-text" placeholder="Write your review here..."></textarea>
+      <button class="submit-btn" onclick="submitReview()">Submit Review</button>
+    </div>
+  </div>
+
+  <script>
+    // Redirect to movie details page
+    function goToDetails() {
+      window.location.href = "movie-details.html"; // Redirect to movie-details.html
+    }
+
+    // Submit review and redirect to submission success page
+    function submitReview() {
+      const reviewText = document.getElementById("review-text").value;
+      if (reviewText.trim() !== "") {
+        // Store review text in localStorage to display on success page
+        localStorage.setItem("review", reviewText);
+        window.location.href = "review-success.html"; // Redirect to review-success.html
+      } else {
+        alert("Please write a review before submitting.");
+      }
+    }
+  </script>
+
+</body>
+</html>
